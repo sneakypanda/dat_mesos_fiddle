@@ -28,12 +28,12 @@ echo "ARCHIVE:     ${ARCHIVE}"
 echo "SIGNATURE:   ${SIGNATURE}"
 echo "DIGESTS:     ${DIGESTS}"
 
-#mkdir -p ${APP_DIR}
-#cd ${APP_DIR}
-#[[ -e ${APP_DIR}/${ARCHIVE} ]] || curl -O ${APP_URL}/${ARCHIVE}
-#[[ -e ${APP_DIR}/${SIGNATURE} ]] || curl -O ${APP_URL}/${SIGNATURE}
-#[[ -e ${APP_DIR}/${DIGESTS} ]] || curl -O ${APP_URL}/${DIGESTS}
-#
-#CHECKSUM=$(cat ${APP_DIR}/${DIGESTS} | awk '{print $1}')
-#echo "CHECKSUM:    ${CHECKSUM}"
-#sha512sum -c ${APP_DIR}/${DIGESTS}
+mkdir -p ${APP_DIR}
+cd ${APP_DIR}
+[[ -e ${APP_DIR}/${ARCHIVE} ]] || curl -O ${APP_URL}/${ARCHIVE}
+[[ -e ${APP_DIR}/${SIGNATURE} ]] || curl -O ${APP_URL}/${SIGNATURE}
+[[ -e ${APP_DIR}/${DIGESTS} ]] || curl -O ${APP_URL}/${DIGESTS}
+
+CHECKSUM=$(cat ${APP_DIR}/${DIGESTS} | awk '{print $1}')
+echo "CHECKSUM:    ${CHECKSUM}"
+sha512sum -c ${APP_DIR}/${DIGESTS}
