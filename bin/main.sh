@@ -2,4 +2,4 @@
 BIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 bash ${BIN_DIR}/10_get.sh
-#bash 20_pkg.sh
+bash ${BIN_DIR}/20_os_prep.sh
