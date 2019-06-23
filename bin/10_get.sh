@@ -88,5 +88,5 @@ sha512sum -c ${DIGESTS_PATH}
 echo "* Importing signing keys"
 gpg --import ${KEYS_PATH}
 echo "* Verifying signature"
-gpg --verify ${KEYS_PATH}
+gpg --verify ${SIGNATURE_PATH}
 
