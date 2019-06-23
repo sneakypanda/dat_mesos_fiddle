@@ -3,8 +3,7 @@ BIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASE_DIR="$(dirname ${BIN_DIR})/wrk"
 
 APPLICATION="mesos"
-DEFAULT_VERSION="1.8.0"
-VERSION=${1:-${DEFAULT_VERSION}}
+VERSION="1.8.0"
 
 APP_DIR="${BASE_DIR}/${APPLICATION}-${VERSION}"
 
