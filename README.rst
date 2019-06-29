@@ -14,7 +14,7 @@ URLs
 ====
 * `Mesos Homepage <https://mesos.apache.org/>`_
 * `Apache Mesos Dist <https://archive.apache.org/dist/mesos/>`_
-* `Verify Apache Releases <https://apache.org/info/verification.html`_
+* `Verify Apache Releases <https://apache.org/info/verification.html>`_
 
 Note
 ====
