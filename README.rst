@@ -2,13 +2,13 @@
 Truss
 =====
 
-A script to help with fiddling with things.
+A repository to help play around with various things and includes a script to help with some of the more tedious parts of it.
 
-
-Description
-===========
-
-The goal of this is simply to play around with various things and includes a script to help with some of the more tedious parts of it.
+Build
+=====
+::
+    # Build wheels
+    pip wheel --wheel-dir=wrk/wheels/ .
 
 URLs
 ====
