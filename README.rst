@@ -18,6 +18,5 @@ URLs
 
 Note
 ====
-
-This project has been set up using PyScaffold 3.1. For details and usage
-information on PyScaffold see https://pyscaffold.org/.
+Parts of this project has been created using PyScaffold 3.1 and its generated files as inspiration.
+Check them out `here <https://pyscaffold.org/>`_.
