@@ -1,6 +1,6 @@
 # IMPORTANT(coenie): Do *NOT* use any modules outside the standard libraries in
 # this file or the world as we know it will end.
-
+import logging
 
 class DictObject(dict):
     """A class that can be defined and accessed as a class. See:
@@ -27,3 +27,37 @@ class DictObject(dict):
 AppConfig = DictObject()
 AppConfig.application = "truss"
 AppConfig.version = "0.0.1"
+AppConfig.logging = {
+    "version": 1,
+    "formatters": {
+        "console": {
+            "format": "%(levelname)s: %(message)s"
+        },
+        "syslog": {
+            "format": (
+                "%(asctime)s: %(name)s: %(filename)s:%(lineno)d:"
+                " %(levelname)s: %(message)s"
+            )
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "console",
+            "level": logging.DEBUG,
+        },
+        "syslog": {
+            "class": "logging.handlers.SysLogHandler",
+            "formatter": "syslog",
+            "level": logging.DEBUG,
+            "address": "/dev/log"
+        }
+    },
+    "loggers": {
+        "": {
+            "handlers": ["console", "syslog"],
+            "level": logging.INFO,
+            "propagate": True
+        },
+    }
+}
