@@ -2,6 +2,7 @@
 """A script to help with fiddling with things.
 
 Usage:
+    truss [-d | --debug] (download | dl)
     truss [-d | --debug] pkg
     truss (-d | --debug)
     truss (-h | --help)
@@ -22,22 +23,24 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-    version_string = "{} {}".format(AppConfig.application, AppConfig.version)
+    version_string = "{} {}".format(
+        AppConfig.meta.application,
+        AppConfig.meta.version
+    )
     arguments = docopt(__doc__, version=version_string)
-    logger.info("Starting %s CLI", AppConfig.application)
+    logger.info("Starting %s CLI", AppConfig.meta.application)
 
     if arguments['--debug']:
         logging.getLogger(__name__).setLevel(logging.DEBUG)
 
-        logger.debug("Command line arguments:")
         for key, value in arguments.items():
-            logger.debug("%s: %s", key, value)
+            logger.debug("cli_arg: %s: %s", key, value)
 
         logger.debug("Application configuration:")
-        for conf_key, conf_value in AppConfig.items():
-            if isinstance(conf_value, dict):
-                for key, value in conf_value.items():
-                    logger.debug("%s.%s: %s", conf_key, key, value)
-            else:
-                logger.debug("%s: %s", conf_key, conf_value)
+        config_strings = AppConfig.get_printable_string()
+        for config_string in config_strings:
+            logger.debug("app_config: %s", config_string)
 
+
+if __name__ == "__main__":
+    main()
