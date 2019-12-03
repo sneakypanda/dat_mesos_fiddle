@@ -1,5 +1,6 @@
-# Mesos Fiddle
-Fiddling with Mesos.
+# Truss
+
+A repository with various docs and scripts to help while fiddling with various distributed architecture things.
 
 ## URLs
 - [Mesos Homepage](https://mesos.apache.org/)
