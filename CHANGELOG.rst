@@ -8,23 +8,11 @@ The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`
 Unreleased
 ==========
 
-Added
------
+
+1.0.0 - 2020-01-01
+==================
 
 Changed
 -------
 
-Deprecated
-----------
-
-Removed
--------
-
-Fixed
------
-
-Security
---------
-
-1.0.0 - 2020-01-01
-------------------
+- Changed to a Python package.

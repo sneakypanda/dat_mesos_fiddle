@@ -4,9 +4,20 @@ Truss
 A repository with various docs and scripts to help while fiddling with various distributed architecture things.
 
 
-Description
+Installation
+============
+
+Development
 ===========
-A longer description of your project goes here...
+To work on the package follow the instructions below.
+
+.. code-block:: bash
+
+    # Install the required packages
+    pip install pyscaffold pipenv
+
+    # Install the development environment
+    pipenv install --dev
 
 
 URLs
